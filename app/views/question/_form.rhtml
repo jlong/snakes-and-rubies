@@ -1,0 +1,13 @@
+<%= error_messages_for 'question' %>
+
+<p><label for="question_name">Name:</label><br/>
+<%= text_field 'question', 'name' %></p>
+
+<p><label for="question_email">URL:</label><br/>
+<%= text_field 'question', 'url' %></p>
+
+<p><label for="question_for">Question for:</label><br/>
+<p><%= select("question", "for_option_id", ForOption::find_all.collect {|o| [ o.name, o.id ] }, { :include_blank => true }) %></p>
+
+<p><label for="question_body">Question:</label><br/>
+<%= text_area 'question', 'body' %></p>

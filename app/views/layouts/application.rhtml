@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Rails vs. Django :: <%= controller.action_name.capitalize %> Question</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <%= stylesheet_link_tag 'scaffold' %>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Rails vs. Django Showdown</h1>
+    </div>
+    <div id="content">
+      <% if flash[:notice] %><p style="color: green"><%= flash[:notice] %></p><% end %>
+<%= @content_for_layout %>
+    </div>
+    <div id="footer">
+      <p>Presented by the <a href="http://ruby.meetup.com/55">Chicago Area Ruby Group</a> and the <a href="http://chipy.org">Chicago Python Users Group</a>.</p>
+      <p><%= link_to 'RSS Feed for Questions', :controller => 'question', :action => 'rss' %></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<h2>Welcome!</h2>
+
+<p>On October 11th at 6:30 PM Ruby and Python developers from all over Chicago
+  will gather together to hear two of the top leaders in the Web 2.0 revolution
+  debate the merits of each others frameworks. <a href="">Adrian ______</a>,
+  the creator of the fabulous <a href="">Django framework</a> for Python, will
+  spare with <a href="http://www.loudthinking.com">David Heinemeier Hansson</a>,
+  the creator of the wonderful <a href="http://rubyonrails.com">Ruby on Rails
+  framework</a> for Ruby. The debate should take just over an hour with
+  questions carefully selected by a moderator from people just like you!</p>
+
+<p>To browse the questions that have been submitted already, check out the
+  questions below. To submit your own question, use the link at the bottom of
+  this page. <strong>Be sure that you have browsed through the other questions
+  before submitting your own.</strong></p>
+
+
+<h2>Recent Questions</h2>
+
+<div class="multi-column">
+  <%
+  count = 0
+  for option in @for_options
+    count += 1
+  %>
+  <div class="column column-<%= count %>">
+    <h3>Questions for <strong><%= option.name %></strong></h3>
+    <% for @question in option.latest_questions(5) %>
+      <%= render_partial 'question' %>
+    <% end %>
+    <p><%= link_to "More >>", :action => 'list', :id => option.id %></p>
+  </div>
+  <% end %>
+</div>
+
+<p class="post-your-own"><%= link_to 'Post Your Own Question >>', :controller => 'question', :action => 'new' %></p>

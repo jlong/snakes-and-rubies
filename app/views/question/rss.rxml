@@ -1,0 +1,23 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.channel do
+
+    xml.title       "Ruby vs. Django Shootout"
+    xml.link        url_for :only_path => false, :controller => ''
+    xml.pubDate     CGI.rfc1123_date @questions.first.created_on if @questions.any?
+    xml.description "Questions feed for shootout."
+
+    @questions.each do |question|
+      xml.item do
+        xml.title       "Question for #{question.for_option.name} from #{question.name}"
+        xml.link        url_for :only_path => false, :controller => 'question', :action => 'show', :id => question.id
+        xml.description question.body
+        xml.pubDate     CGI.rfc1123_date question.created_on
+        xml.guid        url_for :only_path => false, :controller => 'question', :action => 'show', :id => question.id
+        xml.author      "#{question.name} (#{question.url})"
+      end
+    end
+
+  end
+end

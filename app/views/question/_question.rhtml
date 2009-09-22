@@ -1,0 +1,4 @@
+<div class="question">
+  <p class="body"><%=h @question.body %></p>
+  <p class="info">Submitted by <a href="<%= @question.url %>"><%= @question.name %></a><% if @question.created_on %> <%= time_ago_in_words(@question.created_on) %> ago<% end %>.</p>
+</div>

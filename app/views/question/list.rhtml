@@ -1,0 +1,7 @@
+<h2>Questions for <strong><%= @for_option.name %></strong></h2>
+
+<% for @question in @for_option.latest_questions %>
+  <%= render_partial 'question' %>
+<% end %>
+
+<p class="post-your-own"><%= link_to 'Post your own question >>', :controller => 'question', :action => 'new', :id => @for_option.id %></p>

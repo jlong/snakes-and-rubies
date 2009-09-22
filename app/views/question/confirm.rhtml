@@ -1,0 +1,13 @@
+<h1>Confirm</h1>
+
+<%= start_form_tag :action => 'create' %>
+  <p><strong>Name:</strong> <%=h @question.name %></p>
+  <p><strong>E-mail:</strong> <%=h @question.url %></p>
+  <p><strong>For:</strong> <%=h @question.for_option.name %></p>
+  <p><strong>Question:</strong> <%=h @question.body %></p>
+  <p>
+    <%= submit_tag "<< Back", :name => "back" %>
+    <%= submit_tag "Post Question", :name => "post" %>
+    <%= submit_tag "Cancel", :name => "cancel" %>
+  </p>
+<%= end_form_tag %>
