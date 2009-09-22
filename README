@@ -1,13 +1,15 @@
 = Snakes and Rubies Debate Application
 
-This is the source code for an application that collected questions for a debate that occurred between David Heinemeier Hansson and Adrian Holovaty about Rails and Django on December 3, 2005.
+This is the source code for an application that collected questions for a
+debate that occurred between David Heinemeier Hansson and Adrian Holovaty
+about Rails and Django on December 3, 2005.
 
 You can read more about the event here:
 http://www.djangoproject.com/snakesandrubies/
 
 == License
 
-Copyright (c) 2005-2009, John W. Long.
+Copyright (c) 2005-2009, John W. Long and Marcel Molina.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
